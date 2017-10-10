@@ -25,16 +25,22 @@ import java.io.InputStream;
 
 public class AddOrUpdateItem extends AppCompatActivity {
 
+    public static SQLiteHelper sqLiteHelper;
+    final int REQUEST_CODE_FOR_GALLERY = 123;
     LinearLayout buttonsLinear;
-    Button addButton, updateButton, deleteButton;
+    Button addButton, updateButton, deleteButton, backButton;
     ImageView cameraImage;
     EditText nameEdit, priceEdit, descriptionEdit;
     TextView cameraText;
-
     String name, price, description;
-    final int REQUEST_CODE_FOR_GALLERY = 123;
 
-    public static SQLiteHelper sqLiteHelper;
+    public static byte[] imageViewToByte(ImageView image) {
+        Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+        return byteArray;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,14 +78,14 @@ public class AddOrUpdateItem extends AppCompatActivity {
                 }
             }
         });
-    }
 
-    public static byte[] imageViewToByte(ImageView image) {
-        Bitmap bitmap = ((BitmapDrawable)image.getDrawable()).getBitmap();
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
-        return byteArray;
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent wishlist = new Intent(AddOrUpdateItem.this, MainActivity.class);
+                startActivity(wishlist);
+            }
+        });
     }
 
     @Override
@@ -122,6 +128,7 @@ public class AddOrUpdateItem extends AppCompatActivity {
         addButton = (Button)findViewById(R.id.add_button);
         updateButton = (Button)findViewById(R.id.update_button);
         deleteButton = (Button)findViewById(R.id.delete_button);
+        backButton = (Button) findViewById(R.id.back_button);
 
         cameraImage = (ImageView) findViewById(R.id.camera_photo);
 

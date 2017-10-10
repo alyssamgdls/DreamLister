@@ -6,10 +6,10 @@ package com.magdales_and_genson.dreamlister;
 
 public class WishItem {
 
-    String name, price, description;
-    Byte[] image;
+    private String name, price, description;
+    private byte[] image;
 
-    public WishItem(String name, String price, String description, Byte[] image) {
+    public WishItem(String name, String price, String description, byte[] image, int id) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -40,11 +40,11 @@ public class WishItem {
         this.description = description;
     }
 
-    public Byte[] getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Byte[] image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 }
