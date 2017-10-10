@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/wish_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:src="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:id="@+id/wish_details_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/wish_image"
+        android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/wish_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wish Name"
+        android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/wish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wish Price"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/wish_descr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Wish Description"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+</RelativeLayout>

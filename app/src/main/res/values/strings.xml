@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dream Lister App</string>
+    <string name="pick_image_text">Click the camera to pick a photo</string>
+    <string name="item_name_text">Item Name</string>
+    <string name="item_price_text">Item Price</string>
+    <string name="item_description_text">Description</string>
+    <string name="add_item_text">Add Item</string>
+    <string name="update_text">Update</string>
+    <string name="delete_text">Delete</string>
+    <string name="add_a_wish_text">Add a Wish</string>
+</resources>
