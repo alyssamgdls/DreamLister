@@ -32,7 +32,6 @@ public class AddOrUpdateItem extends AppCompatActivity {
     ImageView cameraImage;
     EditText nameEdit, priceEdit, descriptionEdit;
     TextView cameraText;
-    String name, price, description;
 
     public static byte[] imageViewToByte(ImageView image) {
         Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
@@ -50,7 +49,7 @@ public class AddOrUpdateItem extends AppCompatActivity {
         findViews();
 
         sqLiteHelper = new SQLiteHelper(this, "DreamListerDB.sqlite", null, 1);
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS ITEM(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, price VARCHAR, description VARCHAR, image BLOB)");
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS WISH(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, price VARCHAR, description VARCHAR, image BLOB)");
 
         cameraImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +66,11 @@ public class AddOrUpdateItem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    sqLiteHelper.addData(name, price, description, imageViewToByte(cameraImage));
+                    sqLiteHelper.addData(
+                            nameEdit.getText().toString().trim(),
+                            priceEdit.getText().toString().trim(),
+                            descriptionEdit.getText().toString().trim(),
+                            imageViewToByte(cameraImage));
                     Toast.makeText(getApplicationContext(), "Item added successfully", Toast.LENGTH_SHORT).show();
                     nameEdit.setText("");
                     priceEdit.setText("");
@@ -135,10 +138,6 @@ public class AddOrUpdateItem extends AppCompatActivity {
         nameEdit = (EditText) findViewById(R.id.item_name_edittext);
         priceEdit = (EditText) findViewById(R.id.item_price_edittext);
         descriptionEdit = (EditText) findViewById(R.id.item_description_edittext);
-
-        name = nameEdit.getText().toString().trim();
-        description = descriptionEdit.getText().toString().trim();
-        price = priceEdit.getText().toString().trim();
 
         cameraText = (TextView) findViewById(R.id.camera_text);
     }
