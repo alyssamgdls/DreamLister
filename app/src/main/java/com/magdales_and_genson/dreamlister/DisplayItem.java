@@ -9,38 +9,27 @@ import android.widget.TextView;
 
 public class DisplayItem extends AppCompatActivity {
 
-    ImageView image;
-    LinearLayout nameLinear, priceLinear, descriptionLinear;
-    TextView namelbl, nametxt, pricelbl, pricetxt, desclbl, desctxt;
+    private ImageView image;
+    private LinearLayout nameLinear, priceLinear, descriptionLinear;
+    private TextView namelbl, nametxt, pricelbl, pricetxt, desclbl, desctxt;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_item);
+        setContentView(R.layout.display_item);
 
         findViews();
 
         Intent intent = getIntent();
-        Bundle bd = intent.getExtras();
-        if (bd != null) {
-            String getName = (String) bd.get("we");
-            namelbl.setText(getName);
-            String getPrice = (String) bd.get("are");
-            pricetxt.setText(getPrice);
-            String getDescription = (String) bd.get("one");
-            desctxt.setText(getDescription);
-        }
 
+        String name = intent.getStringExtra("we");
+        String price = intent.getStringExtra("are");
+        String description = intent.getStringExtra("one");
 
-//        Intent i = this.getIntent();
-//        String name = i.getStringExtra("we");
-//        String price = i.getStringExtra("are");
-//        String description = i.getStringExtra("one");
-
-//        nametxt.setText(name);
-//        pricetxt.setText(price);
-//        desctxt.setText(description);
+        nametxt.setText(name);
+        pricetxt.setText(price);
+        desctxt.setText(description);
     }
 
     public void findViews() {
@@ -58,5 +47,4 @@ public class DisplayItem extends AppCompatActivity {
         pricetxt = (TextView) findViewById(R.id.price_text);
         desctxt = (TextView) findViewById(R.id.description_text);
     }
-
 }

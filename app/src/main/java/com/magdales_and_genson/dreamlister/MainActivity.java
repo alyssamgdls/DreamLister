@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
@@ -100,10 +101,19 @@ public class MainActivity extends AppCompatActivity {
         wishlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                TextView name = (TextView) findViewById(R.id.wish_name);
+                TextView price = (TextView) findViewById(R.id.wish_price);
+                TextView description = (TextView) findViewById(R.id.wish_descr);
+
+                String nameStr = name.getText().toString();
+                String priceStr = price.getText().toString();
+                String descriptionStr = description.getText().toString();
+
                 Intent intent = new Intent(getApplicationContext(), DisplayItem.class);
-                intent.putExtra("we", wishlist.getItemAtPosition(position).toString());
-                intent.putExtra("are", wishlist.getItemAtPosition(position).toString());
-                intent.putExtra("one", wishlist.getItemAtPosition(position).toString());
+                intent.putExtra("we", nameStr);
+                intent.putExtra("are", priceStr);
+                intent.putExtra("one", descriptionStr);
                 startActivity(intent);
             }
         });
