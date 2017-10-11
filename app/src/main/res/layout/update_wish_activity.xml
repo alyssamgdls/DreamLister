@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/camera_photo"
+                android:id="@+id/imageViewWish"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_alignParentTop="true"
@@ -68,27 +68,28 @@
                 android:visibility="visible" />
 
             <Button
-                android:id="@+id/add_button"
+                android:id="@+id/update_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/item_description_edittext"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_style"
                 android:clickable="true"
-                android:text="@string/add_item_text"
+                android:text="@string/string_upd"
                 android:textColor="#90CAF9"
                 android:textSize="20dp"
                 android:textStyle="bold"
-                android:visibility="visible" />
+                android:visibility="visible"
+                />
 
             <Button
-                android:id="@+id/back_button"
+                android:id="@+id/delete_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/add_button"
+                android:layout_below="@id/update_button"
                 android:background="@drawable/button_style"
                 android:clickable="true"
-                android:text="Wishlist"
+                android:text="@string/string_del"
                 android:textColor="#90CAF9"
                 android:textSize="20dp"
                 android:textStyle="bold"
