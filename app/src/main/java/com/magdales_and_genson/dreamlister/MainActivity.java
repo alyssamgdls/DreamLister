@@ -99,12 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
         wishlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent(getApplicationContext(), DisplayItem.class);
-                intent.putExtra("area", String.valueOf(wishlist.getSelectedItem()));
-                intent.putExtra("note", String.valueOf(wishlist.getSelectedItem()));
-                intent.putExtra("alamat", String.valueOf(wishlist.getSelectedItem()));
-                intent.putExtra("status", String.valueOf(wishlist.getSelectedItem()));
+                intent.putExtra("we", wishlist.getItemAtPosition(position).toString());
+                intent.putExtra("are", wishlist.getItemAtPosition(position).toString());
+                intent.putExtra("one", wishlist.getItemAtPosition(position).toString());
                 startActivity(intent);
             }
         });
