@@ -49,7 +49,7 @@ public class AddOrUpdateItem extends AppCompatActivity {
         findViews();
 
         sqLiteHelper = new SQLiteHelper(this, "DreamListerDB.sqlite", null, 1);
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS WISH(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, price VARCHAR, description VARCHAR, image BLOB)");
+        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS DREAM(Id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, price VARCHAR, description VARCHAR, image BLOB)");
 
         cameraImage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -53,10 +53,10 @@ public class WishListAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inflater.inflate(layout, null);
 
-            holder.wishName = row.findViewById(R.id.wish_name);
-            holder.wishPrice = row.findViewById(R.id.wish_price);
-            holder.wishDescription = row.findViewById(R.id.wish_descr);
-            holder.wishImage = row.findViewById(R.id.wish_image);
+            holder.wishName = (TextView) row.findViewById(R.id.wish_name);
+            holder.wishPrice = (TextView) row.findViewById(R.id.wish_price);
+            holder.wishDescription = (TextView) row.findViewById(R.id.wish_descr);
+            holder.wishImage = (ImageView) row.findViewById(R.id.wish_image);
             row.setTag(holder);
         } else {
             holder = (ViewHolder) row.getTag();

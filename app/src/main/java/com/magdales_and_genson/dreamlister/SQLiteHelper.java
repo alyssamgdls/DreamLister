@@ -17,13 +17,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void queryData(String sql) {
-        SQLiteDatabase database = this.getWritableDatabase();
+        SQLiteDatabase database = getWritableDatabase();
         database.execSQL(sql);
     }
 
     public void addData(String name, String price, String description, byte[] image) {
-        SQLiteDatabase database = this.getWritableDatabase();
-        String sql = "INSERT INTO ITEM VALUES(NULL, ?, ?, ?, ?)";
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "INSERT INTO DREAM VALUES(NULL, ?, ?, ?, ?)";
 
         SQLiteStatement statement = database.compileStatement(sql);
         statement.clearBindings();
@@ -34,6 +34,34 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         statement.bindBlob(4, image);
 
         statement.executeInsert();
+    }
+
+    public void deleteData(int id) {
+        SQLiteDatabase database = getWritableDatabase();
+        String sql = "DELETE FROM DREAM WHERE id = ?";
+
+        SQLiteStatement statement = database.compileStatement(sql);
+        statement.clearBindings();
+        statement.bindDouble(1, (double) id);
+
+        statement.execute();
+        database.close();
+    }
+
+    public void updateData(String name, String price, String description, byte[] image, int id) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        String sql = "UPDATE DREAM SET name = ?, price = ?, description = ?, image = ? WHERE id = ?";
+        SQLiteStatement statement = database.compileStatement(sql);
+
+        statement.bindString(1, name);
+        statement.bindString(2, price);
+        statement.bindString(3, description);
+        statement.bindBlob(4, image);
+        statement.bindDouble(5, (double) id);
+
+        statement.execute();
+        database.close();
     }
 
     public Cursor getData(String sql) {

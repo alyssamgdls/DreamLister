@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.magdales_and_genson.dreamlister.AddOrUpdateItem">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewWish"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:alpha="0.60"
+                android:scaleType="fitCenter"
+                android:src="@drawable/camera"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/camera_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/camera_photo"
+                android:layout_margin="10dp"
+                android:text="@string/pick_image_text"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/item_name_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/camera_text"
+                android:layout_margin="10dp"
+                android:hint="@string/item_name_text"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/item_price_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_name_edittext"
+                android:layout_margin="10dp"
+                android:hint="@string/item_price_text"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/item_description_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_price_edittext"
+                android:layout_margin="10dp"
+                android:hint="@string/item_description_text"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_description_edittext"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_style"
+                android:clickable="true"
+                android:text="@string/string_upd"
+                android:textColor="#90CAF9"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/delete_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/update_button"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_style"
+                android:clickable="true"
+                android:text="@string/string_del"
+                android:textColor="#90CAF9"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

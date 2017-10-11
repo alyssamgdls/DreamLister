@@ -8,4 +8,6 @@
     <string name="update_text">Update</string>
     <string name="delete_text">Delete</string>
     <string name="add_a_wish_text">Add a Wish</string>
+    <string name="string_del">DELETE</string>
+    <string name="string_upd">UPDATE</string>
 </resources>

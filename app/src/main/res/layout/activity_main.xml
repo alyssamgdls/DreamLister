@@ -11,12 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/add_a_wish_text"/>
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_style"
+        android:text="@string/add_a_wish_text"
+        android:textColor="#90CAF9"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/wishes_listview"
-        android:layout_below="@id/add_wish_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/add_wish_button"
         android:layout_margin="10dp" />
 </RelativeLayout>

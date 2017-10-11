@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.magdales_and_genson.dreamlister.AddOrUpdateItem">
 
-    <ImageView
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:id="@+id/form_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
         android:id="@+id/camera_photo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -99,4 +108,6 @@
             android:layout_weight="1"
             android:text="@string/delete_text" />
     </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

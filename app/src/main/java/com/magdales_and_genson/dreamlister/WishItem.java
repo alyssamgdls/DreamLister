@@ -6,6 +6,7 @@ package com.magdales_and_genson.dreamlister;
 
 public class WishItem {
 
+    int id;
     private String name, price, description;
     private byte[] image;
 
@@ -14,6 +15,7 @@ public class WishItem {
         this.price = price;
         this.description = description;
         this.image = image;
+        this.id = id;
     }
 
     public String getName() {
